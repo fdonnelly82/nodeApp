@@ -40,9 +40,6 @@ http.createServer(function(request, responce) {
                    db.close();
                }
             });
-
-            db.close();
         }
-        responce.end('Finished, Connected closed \n');
     });
 }).listen(port);
