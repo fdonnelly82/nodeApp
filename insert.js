@@ -37,11 +37,11 @@ http.createServer(function(request, responce) {
                     console.log(result);
                     responce.write('Inserted ' + result.insertedCount + ' documents ok.' + "\n");
                 }
-            });
 
-            db.close();
-            responce.end('Finished, Connection closed \n');
+                db.close();
+                responce.end('Finished, Connection closed \n');
+            });
         }
-        responce.end('Finished, Connected closed \n');
+
     });
 }).listen(port);
