@@ -39,10 +39,13 @@ http.createServer(function(request, responce) {
                    responce.end('Completed');
                    db.close();
                }
+
+                db.close();
+                responce.end('Finished, Connected closed \n');
             });
 
-            db.close();
+
         }
-        responce.end('Finished, Connected closed \n');
+
     });
 }).listen(port);
