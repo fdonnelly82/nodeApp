@@ -5,7 +5,7 @@
 var http = require('http');
 var port = process.env.PORT || 1337;
 
-http.createServer(function(request, responce) {
+var server = http.createServer(function(request, responce) {
     responce.writeHead(200, { 'Content-Type' : 'text/html' });
     responce.write("<!DOCTYPE 'html'>");
     responce.write("<html>");
