@@ -2,13 +2,13 @@
  * Created by 1302264 on 23/11/2015.
  */
 
-var mongodb = reguire('mongodb');
+var mongodb = require('mongodb');
 
 var http = require('http');
 
 var port = process.env.PORT || 1337;
 
-var url = 'mongodb://<FAJDonnelly>:<0211AlexanderJames>@ds054288.mongolab.com:54288/nodejs';
+var url = 'mongodb://FAJDonnelly:0211AlexanderJames@ds054288.mongolab.com:54288/nodejs';
 
 var MongoClient = mongodb.MongoClient;
 
