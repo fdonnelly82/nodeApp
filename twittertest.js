@@ -21,6 +21,10 @@ for (var i = 0; i<tweets.statuses.length ; i++)
 http.createServer(function(request, responce) {
     responce.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' });
     client.get('search/tweets', {q: 'lolcat'}, function(error, tweets) {
+        for (var i = 0; i< tweets.statuses.length ; i++)
+        {
+            json.push({name: tweets.statuses[i].user.name, text: tweets.statuses[i].text});
+        }
         responce.end(JSON.stringify(json));
     });
 }).listen(port);
