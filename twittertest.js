@@ -13,10 +13,8 @@ var client = new Twitter({
 });
 
 http.createServer(function(request, responce) {
-    responce.writeHead(200, { 'Content-Type': 'text/plain' });
-
+    responce.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow_Origin' : '*' });
     client.get('search/tweets', {q: 'lolcat'}, function(error, tweets) {
-        console.log(tweets);
+        responce.end(JSON.stringify(tweets));
     });
-
 }).listen(port);
