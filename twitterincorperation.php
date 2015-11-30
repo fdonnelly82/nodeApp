@@ -11,7 +11,7 @@
                     document.getElementById("twitter").innerHTML = xhttp.responseText;
                 }
             };
-            xhttp.open("GET", "http://http://1302264node.azurewebsites.net/", true);
+            xhttp.open("GET", "http://http://1302264node.azurewebsites.net/twittericorperation.php", true);
             xhttp.send();
         }
     </script>
