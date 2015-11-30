@@ -2,6 +2,8 @@
  * Created by 1302264 on 30/11/2015.
  */
 var Twitter = require('twitter');
+var http = require('http')
+var port = process.env.PORT || 1337;
 
 var client = new Twitter({
     consumer_key: 'NVtfmoGndxwEtOYHvtwbCaXHT',
@@ -10,6 +12,11 @@ var client = new Twitter({
     access_token_secret: 'MPThhPwIK4TBBapNQjms8WPKJbdSkbjwLLBUF6rNuYkH7'
 });
 
-client.get('search/tweets', {q: 'lolcat'}, function(error, tweets){
-    console.log(tweets);
-});
+http.createServer(function(request, responce) {
+    responce.writeHead(200, { 'Content-Type': 'text/plain' });
+
+    client.get('search/tweets', {q: 'lolcat'}, function(error, tweets) {
+        console.log(tweets);
+    });
+
+}).listen(port);
